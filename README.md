@@ -1,29 +1,14 @@
-# Youtube-Unlike-All-Videos
+# Youtube Delete Your Likes You have liked to
+## Features
+A Script to mass delete like from all YouTube Videos you've already liked to.
 
-Go To 
-https://www.youtube.com/playlist?list=LL
+## Browser compatibility
+Supported in effectively all browsers.
 
-Then Paste This Code :
+## Steps
+1. Go to [Here](https://www.youtube.com/playlist?list=LL) to view a list of all the videos you've liked to.
+2. Right Click and select **Inspect Element**.
+3. Go to **Console** and Paste the contents of [youtube-like-deleter.js](https://github.com/byL1N3/Youtube-Unlike-All-Videos/blob/main/Youtube-Like-Deleter.js) in the console and press _Enter_.
+4. The script will execute and it will sequentially delete likes you from all the videos you have liked to.
 
-```function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function deleteLikedVideos() {
-    'use strict';
-    var items = document.querySelectorAll('#primary ytd-playlist-video-renderer yt-icon-button.dropdown-trigger > button[aria-label]');
-    var out;
-
-    for (var i = 0; i < items.length; i++) {
-        items[i].click();
-        out = setTimeout(function () {
-            if (document.querySelector('tp-yt-paper-listbox.style-scope.ytd-menu-popup-renderer').lastElementChild) {
-                document.querySelector('tp-yt-paper-listbox.style-scope.ytd-menu-popup-renderer').lastElementChild.click();
-            }
-        }, 100);
-        await sleep(500); // sleep cause browser can not handle the process
-        clearTimeout(out);
-    }
-}
-
-deleteLikedVideos();```
+> Done!
